@@ -11,11 +11,12 @@ using MySql.Data.MySqlClient;
 
 namespace Assignment2
 {
-    public partial class LoginForm : System.Windows.Forms.Form
+    public partial class LoginForm : Form
     {
-        string user;
+        public static string user, email;
         string pass;
         string userRole;
+        public static int uId;
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlDataAdapter ada;
         DataTable dt;
@@ -24,11 +25,6 @@ namespace Assignment2
             InitializeComponent();
         }
 
-       /* private void registerClick(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Register r = new Register();
-            r.Show();        
-        }*/
 
         private void click_login(object sender, EventArgs e)
         {
@@ -53,7 +49,7 @@ namespace Assignment2
             dt = new DataTable();
             try
             {
-                string query = "select u.username, u.password, r.user_type from users u, user_roles ur, roles r  where "+
+                string query = "select u.id, u.email, u.username, u.password, r.user_type from users u, user_roles ur, roles r  where "+
                     "u.id = ur.user_id  and r.id = ur.role_id and u.username ='" + user + "' and u.password='" + pass + "'";
                 ada = new MySqlDataAdapter(query, con);
                 ada.Fill(dt);
@@ -64,11 +60,15 @@ namespace Assignment2
                 {
                     while (uRes.Read())
                     {
-                        userRole = uRes.GetString(2);
+                       
+                        uId = uRes.GetInt32(0);
+                        email = uRes.GetString(1);
+                        userRole = uRes.GetString(4);
+                       
                     }
                     if (userRole == "admin")
                     {
-                        AdminDashboard ad = new AdminDashboard(user, userRole);
+                        AdminDashboard ad = new AdminDashboard(uId, user, userRole);
                         ad.Show();
                         this.Visible = false;
                     }

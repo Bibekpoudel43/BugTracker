@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.panel = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,47 +41,20 @@
             this.lblusername = new System.Windows.Forms.Label();
             this.lblpassword = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel
+            // panel5
             // 
-            this.panel.BackColor = System.Drawing.Color.Tomato;
-            this.panel.Controls.Add(this.linkLabel1);
-            this.panel.Controls.Add(this.label1);
-            this.panel.Controls.Add(this.pictureBox1);
-            this.panel.Controls.Add(this.label);
-            this.panel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(264, 382);
-            this.panel.TabIndex = 0;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Tomato;
-            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.linkLabel1.Location = new System.Drawing.Point(119, 345);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(61, 16);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Register";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(38, 345);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 14);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "New User?";
+            this.panel5.BackColor = System.Drawing.Color.Tomato;
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.label);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(264, 382);
+            this.panel5.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -228,15 +199,15 @@
             this.Controls.Add(this.txtname);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel);
+            this.Controls.Add(this.panel5);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
-            this.panel.ResumeLayout(false);
-            this.panel.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,11 +216,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtname;
