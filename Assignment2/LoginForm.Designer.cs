@@ -42,6 +42,7 @@
             this.buttonexit = new System.Windows.Forms.Button();
             this.lblusername = new System.Windows.Forms.Label();
             this.lblpassword = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,20 +67,19 @@
             this.linkLabel1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.linkLabel1.Location = new System.Drawing.Point(117, 361);
+            this.linkLabel1.Location = new System.Drawing.Point(119, 345);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(61, 16);
             this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Register";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registerClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(36, 361);
+            this.label1.Location = new System.Drawing.Point(38, 345);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 14);
             this.label1.TabIndex = 1;
@@ -201,12 +201,25 @@
             this.lblpassword.Size = new System.Drawing.Size(0, 16);
             this.lblpassword.TabIndex = 11;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Tomato;
+            this.label4.Location = new System.Drawing.Point(626, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 25);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "X";
+            this.label4.Click += new System.EventHandler(this.Close);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(664, 382);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblpassword);
             this.Controls.Add(this.lblusername);
             this.Controls.Add(this.buttonexit);
@@ -217,11 +230,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -245,6 +258,7 @@
         private System.Windows.Forms.Button buttonexit;
         private System.Windows.Forms.Label lblusername;
         private System.Windows.Forms.Label lblpassword;
+        private System.Windows.Forms.Label label4;
     }
 }
 
