@@ -31,14 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.labelterms = new System.Windows.Forms.Label();
             this.labelpassword = new System.Windows.Forms.Label();
             this.labelusername = new System.Windows.Forms.Label();
             this.labelemail = new System.Windows.Forms.Label();
             this.labelfullname = new System.Windows.Forms.Label();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkBox = new System.Windows.Forms.CheckBox();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
@@ -47,7 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.buttonRegister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelRight.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -65,14 +63,12 @@
             // 
             // panelRight
             // 
-            this.panelRight.Controls.Add(this.labelterms);
             this.panelRight.Controls.Add(this.labelpassword);
             this.panelRight.Controls.Add(this.labelusername);
             this.panelRight.Controls.Add(this.labelemail);
             this.panelRight.Controls.Add(this.labelfullname);
             this.panelRight.Controls.Add(this.txtpassword);
             this.panelRight.Controls.Add(this.label8);
-            this.panelRight.Controls.Add(this.checkBox);
             this.panelRight.Controls.Add(this.buttonRegister);
             this.panelRight.Controls.Add(this.txtusername);
             this.panelRight.Controls.Add(this.label6);
@@ -86,16 +82,6 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(465, 438);
             this.panelRight.TabIndex = 1;
-            // 
-            // labelterms
-            // 
-            this.labelterms.AutoSize = true;
-            this.labelterms.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelterms.ForeColor = System.Drawing.Color.Tomato;
-            this.labelterms.Location = new System.Drawing.Point(101, 311);
-            this.labelterms.Name = "labelterms";
-            this.labelterms.Size = new System.Drawing.Size(0, 16);
-            this.labelterms.TabIndex = 21;
             // 
             // labelpassword
             // 
@@ -158,24 +144,23 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Password";
             // 
-            // checkBox
+            // buttonRegister
             // 
-            this.checkBox.AutoSize = true;
-            this.checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.checkBox.FlatAppearance.BorderSize = 0;
-            this.checkBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tomato;
-            this.checkBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
-            this.checkBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
-            this.checkBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox.ForeColor = System.Drawing.Color.Tomato;
-            this.checkBox.Location = new System.Drawing.Point(57, 283);
-            this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(255, 25);
-            this.checkBox.TabIndex = 11;
-            this.checkBox.Text = "I Agree Terms and Conditions";
-            this.checkBox.UseVisualStyleBackColor = true;
+            this.buttonRegister.BackColor = System.Drawing.Color.Tomato;
+            this.buttonRegister.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.buttonRegister.FlatAppearance.BorderSize = 0;
+            this.buttonRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.buttonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegister.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegister.ForeColor = System.Drawing.Color.White;
+            this.buttonRegister.Location = new System.Drawing.Point(96, 309);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(230, 32);
+            this.buttonRegister.TabIndex = 10;
+            this.buttonRegister.Text = "Register";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.clickRegister);
             // 
             // txtusername
             // 
@@ -245,9 +230,9 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label1.Location = new System.Drawing.Point(30, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 25);
+            this.label1.Size = new System.Drawing.Size(157, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Register New User";
+            this.label1.Text = "Add New User";
             // 
             // panelLeft
             // 
@@ -257,24 +242,6 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(288, 438);
             this.panelLeft.TabIndex = 0;
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.BackColor = System.Drawing.Color.Tomato;
-            this.buttonRegister.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.buttonRegister.FlatAppearance.BorderSize = 0;
-            this.buttonRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
-            this.buttonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
-            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegister.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegister.ForeColor = System.Drawing.Color.White;
-            this.buttonRegister.Location = new System.Drawing.Point(104, 342);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(230, 32);
-            this.buttonRegister.TabIndex = 10;
-            this.buttonRegister.Text = "Register";
-            this.buttonRegister.UseVisualStyleBackColor = false;
-            this.buttonRegister.Click += new System.EventHandler(this.clickRegister);
             // 
             // Register
             // 
@@ -307,10 +274,8 @@
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtfullname;
-        private System.Windows.Forms.CheckBox checkBox;
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label labelterms;
         private System.Windows.Forms.Label labelpassword;
         private System.Windows.Forms.Label labelusername;
         private System.Windows.Forms.Label labelemail;

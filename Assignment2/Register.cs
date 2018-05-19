@@ -43,10 +43,6 @@ namespace Assignment2
             {
                 labelpassword.Text = "•Please enter a password ";
             }
-            else if (!checkBox.Checked)
-            {
-                labelterms.Text = "•Please accept the terms and conditions ";
-            }
             else {
                 string name = txtfullname.Text;
                 string email = txtemail.Text;
