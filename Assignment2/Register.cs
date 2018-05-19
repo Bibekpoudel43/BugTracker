@@ -35,10 +35,6 @@ namespace Assignment2
             {
                 labelemail.Text = " •Please enter your email ";
             }
-            else if (comboBoxRole.Text == "")
-            {
-                labelrole.Text = "•Please select a role ";
-            }
             else if (txtusername.Text == "")
             {
                 labelusername.Text = " •Please enter a username ";
@@ -54,12 +50,11 @@ namespace Assignment2
             else {
                 string name = txtfullname.Text;
                 string email = txtemail.Text;
-                string role = comboBoxRole.Text;
                 string uname = txtusername.Text;
                 string pass = txtpassword.Text;
                 try
                 {
-                    string myInsertQuery = "INSERT INTO users (full_name, email, role, username, password) Values('" + name + "','" + email + "', '" + role + "', '" + uname + "', '" + pass + "')";
+                    string myInsertQuery = "INSERT INTO users (full_name, email, username, password) Values('" + name + "','" + email + "','" + uname + "', '" + pass + "')";
                     myCommand = new MySqlCommand(myInsertQuery);
                     myCommand.Connection = con;
                     con.Open();
@@ -69,13 +64,18 @@ namespace Assignment2
                         this.Close();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 myCommand.Connection.Close();
             }
+        }
+
+        private void Close(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
