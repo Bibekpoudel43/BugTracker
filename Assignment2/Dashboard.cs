@@ -12,30 +12,36 @@ namespace Assignment2
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public Dashboard(string user, string userRole)
         {
             InitializeComponent();
+            labelWelcome.Text = "Welcome "+user+ "|" +userRole;
         }
 
-        private void clickRegister(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Register r = new Register();
-            r.MdiParent = this;
-            r.Show();
-        }
-
-        private void loginClick(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            LoginForm l = new LoginForm();
-            l.MdiParent = this;
-            l.Show();
-        }
-
-        private void clickHome(object sender, LinkLabelLinkClickedEventArgs e)
+        private void clickHomeMenu(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Home hm = new Home();
             hm.MdiParent = this;
             hm.Show();
+        }
+
+        private void LogOut(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginForm l = new LoginForm();
+            this.Visible = false;
+            l.Visible = true;
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void clickReport(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ReportForm r = new ReportForm();
+            r.MdiParent = this;
+            r.Show();
         }
     }
 }
