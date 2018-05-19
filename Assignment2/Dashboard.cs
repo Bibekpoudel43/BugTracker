@@ -43,5 +43,12 @@ namespace Assignment2
             r.MdiParent = this;
             r.Show();
         }
+
+        private void clickViewBugs(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ViewBug vb = new ViewBug();
+            vb.MdiParent = this;
+            vb.Show();
+        }
     }
 }

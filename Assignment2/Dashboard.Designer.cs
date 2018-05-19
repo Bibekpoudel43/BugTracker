@@ -37,6 +37,7 @@
             this.btnsearch = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.lblhome = new System.Windows.Forms.LinkLabel();
+            this.linkLabelViewBug = new System.Windows.Forms.LinkLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -45,6 +46,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tomato;
+            this.panel1.Controls.Add(this.linkLabelViewBug);
             this.panel1.Controls.Add(this.linkReport);
             this.panel1.Controls.Add(this.labelWelcome);
             this.panel1.Controls.Add(this.lbllogout);
@@ -54,7 +56,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 49);
+            this.panel1.Size = new System.Drawing.Size(1076, 49);
             this.panel1.TabIndex = 0;
             // 
             // linkReport
@@ -66,7 +68,7 @@
             this.linkReport.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkReport.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkReport.LinkColor = System.Drawing.Color.White;
-            this.linkReport.Location = new System.Drawing.Point(86, 15);
+            this.linkReport.Location = new System.Drawing.Point(86, 13);
             this.linkReport.Name = "linkReport";
             this.linkReport.Size = new System.Drawing.Size(78, 20);
             this.linkReport.TabIndex = 6;
@@ -79,7 +81,7 @@
             this.labelWelcome.AutoSize = true;
             this.labelWelcome.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWelcome.ForeColor = System.Drawing.Color.White;
-            this.labelWelcome.Location = new System.Drawing.Point(587, 15);
+            this.labelWelcome.Location = new System.Drawing.Point(692, 15);
             this.labelWelcome.Name = "labelWelcome";
             this.labelWelcome.Size = new System.Drawing.Size(0, 20);
             this.labelWelcome.TabIndex = 5;
@@ -92,7 +94,7 @@
             this.lbllogout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbllogout.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lbllogout.LinkColor = System.Drawing.Color.White;
-            this.lbllogout.Location = new System.Drawing.Point(925, 13);
+            this.lbllogout.Location = new System.Drawing.Point(997, 14);
             this.lbllogout.Name = "lbllogout";
             this.lbllogout.Size = new System.Drawing.Size(67, 20);
             this.lbllogout.TabIndex = 4;
@@ -103,7 +105,7 @@
             // btnsearch
             // 
             this.btnsearch.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsearch.Location = new System.Drawing.Point(370, 12);
+            this.btnsearch.Location = new System.Drawing.Point(557, 15);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
             this.btnsearch.TabIndex = 3;
@@ -112,7 +114,7 @@
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(213, 13);
+            this.txtsearch.Location = new System.Drawing.Point(400, 16);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(136, 20);
             this.txtsearch.TabIndex = 0;
@@ -134,12 +136,29 @@
             this.lblhome.Text = "Home";
             this.lblhome.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.clickHomeMenu);
             // 
+            // linkLabelViewBug
+            // 
+            this.linkLabelViewBug.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linkLabelViewBug.AutoSize = true;
+            this.linkLabelViewBug.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabelViewBug.DisabledLinkColor = System.Drawing.Color.DarkRed;
+            this.linkLabelViewBug.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelViewBug.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabelViewBug.LinkColor = System.Drawing.Color.White;
+            this.linkLabelViewBug.Location = new System.Drawing.Point(185, 13);
+            this.linkLabelViewBug.Name = "linkLabelViewBug";
+            this.linkLabelViewBug.Size = new System.Drawing.Size(79, 20);
+            this.linkLabelViewBug.TabIndex = 7;
+            this.linkLabelViewBug.TabStop = true;
+            this.linkLabelViewBug.Text = "View Bug";
+            this.linkLabelViewBug.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.clickViewBugs);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1000, 487);
+            this.ClientSize = new System.Drawing.Size(1076, 628);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -164,5 +183,6 @@
         private System.Windows.Forms.LinkLabel linkReport;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Button btnsearch;
+        private System.Windows.Forms.LinkLabel linkLabelViewBug;
     }
 }
