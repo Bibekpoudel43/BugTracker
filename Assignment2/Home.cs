@@ -16,5 +16,12 @@ namespace Assignment2
         {
             InitializeComponent();
         }
+
+        private void Report_Click(object sender, EventArgs e)
+        {
+            ReportForm rp = new ReportForm();
+            this.Visible = false;
+            rp.Show();
+        }
     }
 }
