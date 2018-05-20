@@ -66,7 +66,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.btnViewCode = new System.Windows.Forms.Button();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.label22 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.CodeLinkLabel = new System.Windows.Forms.LinkLabel();
@@ -665,7 +664,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnViewCode;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.LinkLabel CodeLinkLabel;
