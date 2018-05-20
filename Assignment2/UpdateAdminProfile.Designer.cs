@@ -235,7 +235,7 @@
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelID.ForeColor = System.Drawing.Color.Tomato;
-            this.labelID.Location = new System.Drawing.Point(413, 55);
+            this.labelID.Location = new System.Drawing.Point(369, 54);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(28, 16);
             this.labelID.TabIndex = 40;

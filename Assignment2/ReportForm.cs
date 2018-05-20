@@ -36,12 +36,14 @@ namespace Assignment2
             editor.Language = FastColoredTextBoxNS.Language.HTML;
 
         }
-        private void clickJava(object sender, EventArgs e)
+
+        private void clickJS(object sender, EventArgs e)
         {
             editor.Language = FastColoredTextBoxNS.Language.JS;
+
         }
 
-        private void clickPython(object sender, EventArgs e)
+        private void clickPHP(object sender, EventArgs e)
         {
             editor.Language = FastColoredTextBoxNS.Language.PHP;
         }
@@ -50,7 +52,8 @@ namespace Assignment2
             dt = new DataSet();
             try
             {
-                string query = "select id,email from users";
+                string query = "select u.id, u.email from users u, roles r, user_roles ur "+
+                    "WHERE u.id = ur.user_id and r.id= ur.role_id and r.user_type = 'developer'";
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 ada = new MySqlDataAdapter(query, con);
                 ada.Fill(dt);

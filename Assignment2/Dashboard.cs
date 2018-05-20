@@ -12,6 +12,7 @@ namespace Assignment2
 {
     public partial class Dashboard : Form
     {
+        public static string searchItem;
         public Dashboard(string user, string userRole)
         {
             InitializeComponent();
@@ -46,9 +47,41 @@ namespace Assignment2
 
         private void clickViewBugs(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ViewBug vb = new ViewBug();
-            vb.MdiParent = this;
-            vb.Show();
+            if (LoginForm.userRole == "tester") {
+                linkLabelViewBug.Enabled = false;
+            }
+            else
+            {
+                ViewBug vb = new ViewBug();
+                vb.MdiParent = this;
+                vb.Show();
+            }
+        }
+
+        private void linkLabelBugHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            BugHistory bh = new BugHistory();
+            bh.MdiParent = this;
+            bh.Show();
+        }
+
+        private void linkLabelChangePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ChangePassword cp = new ChangePassword();
+            cp.MdiParent = this;
+            cp.Show();
+        }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            BugHistory bh = new BugHistory();
+            bh.MdiParent = this;
+            bh.Show();
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            searchItem = txtsearch.Text;
         }
     }
 }

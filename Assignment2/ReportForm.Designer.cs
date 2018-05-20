@@ -58,14 +58,19 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.editor = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLanguage = new System.Windows.Forms.ToolStrip();
             this.Language = new System.Windows.Forms.ToolStripDropDownButton();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pythonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUploadImage = new System.Windows.Forms.Button();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
+            this.lblEditor = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.editor)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.toolStripLanguage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblauthor
@@ -120,6 +125,7 @@
             // 
             // comboBoxAssignee
             // 
+            this.comboBoxAssignee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAssignee.FormattingEnabled = true;
             this.comboBoxAssignee.Location = new System.Drawing.Point(147, 324);
             this.comboBoxAssignee.Name = "comboBoxAssignee";
@@ -131,7 +137,6 @@
             this.txtauthor.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtauthor.Location = new System.Drawing.Point(147, 270);
             this.txtauthor.Name = "txtauthor";
-            this.txtauthor.PasswordChar = '*';
             this.txtauthor.Size = new System.Drawing.Size(219, 23);
             this.txtauthor.TabIndex = 33;
             // 
@@ -157,12 +162,13 @@
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCommit.ForeColor = System.Drawing.Color.White;
-            this.btnCommit.Location = new System.Drawing.Point(241, 486);
+            this.btnCommit.Location = new System.Drawing.Point(340, 563);
             this.btnCommit.Name = "btnCommit";
-            this.btnCommit.Size = new System.Drawing.Size(230, 32);
+            this.btnCommit.Size = new System.Drawing.Size(196, 32);
             this.btnCommit.TabIndex = 30;
             this.btnCommit.Text = "Commit";
             this.btnCommit.UseVisualStyleBackColor = false;
+            this.btnCommit.Click += new System.EventHandler(this.clickCommit);
             // 
             // txtmethod
             // 
@@ -309,7 +315,7 @@
             this.textlineno.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textlineno.Location = new System.Drawing.Point(147, 214);
             this.textlineno.Name = "textlineno";
-            this.textlineno.Size = new System.Drawing.Size(219, 23);
+            this.textlineno.Size = new System.Drawing.Size(175, 23);
             this.textlineno.TabIndex = 43;
             // 
             // label14
@@ -381,22 +387,22 @@
             this.editor.Name = "editor";
             this.editor.Paddings = new System.Windows.Forms.Padding(0);
             this.editor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.editor.Size = new System.Drawing.Size(376, 299);
+            this.editor.Size = new System.Drawing.Size(376, 214);
             this.editor.TabIndex = 56;
             this.editor.Zoom = 100;
             this.editor.Load += new System.EventHandler(this.code_default);
             // 
-            // toolStrip1
+            // toolStripLanguage
             // 
-            this.toolStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStripLanguage.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripLanguage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Language});
-            this.toolStrip1.Location = new System.Drawing.Point(496, 131);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(93, 25);
-            this.toolStrip1.TabIndex = 57;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripLanguage.Location = new System.Drawing.Point(496, 131);
+            this.toolStripLanguage.Name = "toolStripLanguage";
+            this.toolStripLanguage.Size = new System.Drawing.Size(93, 25);
+            this.toolStripLanguage.TabIndex = 57;
+            this.toolStripLanguage.Text = "toolStrip1";
             // 
             // Language
             // 
@@ -413,40 +419,86 @@
             this.Language.Size = new System.Drawing.Size(81, 22);
             this.Language.Text = "Language";
             this.Language.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Language.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.Language_DropDownItemClicked);
             // 
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.cToolStripMenuItem.Text = "C#";
             // 
             // hTMLToolStripMenuItem
             // 
             this.hTMLToolStripMenuItem.Name = "hTMLToolStripMenuItem";
-            this.hTMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hTMLToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.hTMLToolStripMenuItem.Text = "HTML";
             this.hTMLToolStripMenuItem.Click += new System.EventHandler(this.clickHTML);
             // 
             // jSToolStripMenuItem
             // 
             this.jSToolStripMenuItem.Name = "jSToolStripMenuItem";
-            this.jSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.jSToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.jSToolStripMenuItem.Text = "JS";
+            this.jSToolStripMenuItem.Click += new System.EventHandler(this.clickJS);
             // 
             // pythonToolStripMenuItem
             // 
             this.pythonToolStripMenuItem.Name = "pythonToolStripMenuItem";
-            this.pythonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pythonToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.pythonToolStripMenuItem.Text = "PHP";
-            this.pythonToolStripMenuItem.Click += new System.EventHandler(this.clickPython);
+            this.pythonToolStripMenuItem.Click += new System.EventHandler(this.clickPHP);
+            // 
+            // btnUploadImage
+            // 
+            this.btnUploadImage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadImage.Location = new System.Drawing.Point(682, 403);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(125, 23);
+            this.btnUploadImage.TabIndex = 58;
+            this.btnUploadImage.Text = "Upload an Image";
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.Location = new System.Drawing.Point(603, 432);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(292, 142);
+            this.pictureBoxImage.TabIndex = 59;
+            this.pictureBoxImage.TabStop = false;
+            // 
+            // lblEditor
+            // 
+            this.lblEditor.AutoSize = true;
+            this.lblEditor.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditor.ForeColor = System.Drawing.Color.Tomato;
+            this.lblEditor.Location = new System.Drawing.Point(583, 381);
+            this.lblEditor.Name = "lblEditor";
+            this.lblEditor.Size = new System.Drawing.Size(0, 16);
+            this.lblEditor.TabIndex = 60;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Tomato;
+            this.label3.Location = new System.Drawing.Point(328, 218);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 16);
+            this.label3.TabIndex = 61;
+            this.label3.Text = "From-To";
             // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(942, 544);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(942, 644);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblEditor);
+            this.Controls.Add(this.pictureBoxImage);
+            this.Controls.Add(this.btnUploadImage);
+            this.Controls.Add(this.toolStripLanguage);
             this.Controls.Add(this.editor);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblseverity);
@@ -480,8 +532,9 @@
             this.Text = "ReportForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.editor)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStripLanguage.ResumeLayout(false);
+            this.toolStripLanguage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,7 +574,11 @@
         private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pythonToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStripLanguage;
         private FastColoredTextBoxNS.FastColoredTextBox editor;
+        private System.Windows.Forms.Button btnUploadImage;
+        private System.Windows.Forms.PictureBox pictureBoxImage;
+        private System.Windows.Forms.Label lblEditor;
+        private System.Windows.Forms.Label label3;
     }
 }

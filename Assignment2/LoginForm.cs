@@ -13,9 +13,8 @@ namespace Assignment2
 {
     public partial class LoginForm : Form
     {
-        public static string user, email;
+        public static string user, email, userRole, userPassword;
         string pass;
-        string userRole;
         public static int uId;
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlDataAdapter ada;
@@ -64,7 +63,8 @@ namespace Assignment2
                         uId = uRes.GetInt32(0);
                         email = uRes.GetString(1);
                         userRole = uRes.GetString(4);
-                       
+                        userPassword = uRes.GetString(3);
+
                     }
                     if (userRole == "admin")
                     {

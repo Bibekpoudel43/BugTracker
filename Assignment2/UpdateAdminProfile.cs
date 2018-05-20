@@ -16,6 +16,7 @@ namespace Assignment2
         MySqlDataAdapter ada;
         DataTable dt;
         MySqlCommand myCommand;
+        string pas = LoginForm.userPassword;
         public UpdateAdminProfile()
         {
             InitializeComponent();
@@ -42,10 +43,16 @@ namespace Assignment2
             {
                 labelOldPassword.Text = "•Please enter your old password ";
             }
+            else if (!pas.Equals(txtOldPassword.Text))
+            {
+                MessageBox.Show("Password doesn't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtOldPassword.Focus();
+            }
             else if (txtNewPassword.Text == "")
             {
                 labelNewPassword.Text = "•Please enter a new password ";
             }
+        
             else
             {
                 updateProfile();
@@ -71,7 +78,6 @@ namespace Assignment2
                         txtfname.Text = uRes.GetString(1);
                         txtemail.Text = uRes.GetString(2);
                         txtuname.Text = uRes.GetString(3);
-                        txtOldPassword.Text = uRes.GetString(4);
                     }
                 }
             }
