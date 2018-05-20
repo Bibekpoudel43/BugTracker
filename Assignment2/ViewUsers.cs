@@ -13,6 +13,7 @@ namespace Assignment2
 {
     public partial class ViewUsers : Form
     {
+        //set connection to the mysql database
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlDataAdapter ada;
         DataSet dt;
@@ -30,6 +31,7 @@ namespace Assignment2
                 con.Open();
                 dt = new DataSet();
                 ada.Fill(dt, "users");
+                //retrive data from database's table and show them to grid table
                 dataGridViewUsers.DataSource = dt.Tables["users"];
                 dataGridViewUsers.Columns["password"].Visible = false;
                 dataGridViewUsers.Columns["id1"].Visible = false;
@@ -51,7 +53,7 @@ namespace Assignment2
 
         private void clickDelete(object sender, EventArgs e)
         {
-           try {
+          try {
                 string selected_uid = dataGridViewUsers.CurrentRow.Cells["id"].Value.ToString();
                 string query = "DELETE from users where id=" +int.Parse(selected_uid);
                 con.Open();
@@ -65,7 +67,7 @@ namespace Assignment2
                     MessageBox.Show("Something's wrong", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
-            }
+               }
             catch(Exception x)
             {
                 MessageBox.Show("Error in db connection" + x.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);

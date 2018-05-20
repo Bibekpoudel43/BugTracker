@@ -47,6 +47,8 @@ namespace Assignment2
 
         private void clickViewBugs(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //if user is a tester then enabling the view Bug link
+            //if not then opening view bug link
             if (LoginForm.userRole == "tester") {
                 linkLabelViewBug.Enabled = false;
             }
@@ -81,6 +83,8 @@ namespace Assignment2
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
+            //retriving text from search textbar and storing in an variable
+            //later use for searching from bug history
             searchItem = txtsearch.Text;
         }
     }

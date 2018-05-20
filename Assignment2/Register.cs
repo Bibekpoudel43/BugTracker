@@ -12,6 +12,12 @@ namespace Assignment2
 {
     public partial class Register : Form
     {
+        private string name;
+        private string email;
+        private string uname;
+        private string pass;
+
+        //set connection with mysql dabatabase
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlCommand myCommand;
         public Register()
@@ -43,40 +49,47 @@ namespace Assignment2
             {
                 labelpassword.Text = "•Please enter a password ";
             }
-            else {
-                string name = txtfullname.Text;
-                string email = txtemail.Text;
-                string uname = txtusername.Text;
-                string pass = txtpassword.Text;
+            else
+            {
+                //calling method
+                addNewUser();
+            }
+         }
+
+         /// <summary>
+         /// adding new user
+         /// </summary>
+          public void addNewUser()
+          { 
+                 name = txtfullname.Text;
+                 email = txtemail.Text;
+                 uname = txtusername.Text;
+                 pass = txtpassword.Text;
                 try
                 {
-                    string myInsertQuery = "INSERT INTO users (full_name, email, username, password) Values('" + name + "','" + email + "','" + uname + "', '" + pass + "')";
+                    string myInsertQuery = "INSERT INTO users (full_name, email, username, password) "+
+                    " Values('" + name + "','" + email + "','" + uname + "', '" + pass + "')";
                     myCommand = new MySqlCommand(myInsertQuery);
                     myCommand.Connection = con;
                     con.Open();
+                    //if query affect the row then
                     if (myCommand.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Sucessfully registered!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
+
                 catch (Exception)
                 {
                     MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
                 myCommand.Connection.Close();
             }
-        }
 
         private void Close(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

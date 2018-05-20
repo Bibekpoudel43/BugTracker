@@ -14,12 +14,25 @@ namespace Assignment2
 {
     public partial class ReportForm : Form
     {
+        //set connection to mysql database
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlDataAdapter ada;
-        DataTable d;
         DataSet dt;
         MySqlCommand myCommand;
         string clickedtext;
+
+        //iniitializing variables
+        private string pNmae;
+        private string className;
+        private string mName;
+        private string lineNo;
+        private string author;
+        private string assignTo;
+        private string summary;
+        private string severity;
+        private string editorB;
+        private string lnk;
+
         public ReportForm()
         {
             InitializeComponent();
@@ -28,6 +41,7 @@ namespace Assignment2
 
         private void code_default(object sender, EventArgs e)
         {
+            //syntax highilghting based on selected language
             editor.Language = FastColoredTextBoxNS.Language.CSharp;
         }
 
@@ -48,11 +62,15 @@ namespace Assignment2
             editor.Language = FastColoredTextBoxNS.Language.PHP;
         }
 
-        public void getUsers() {
+        /// <summary>
+        /// fetching developer only and load it into a combo ox
+        /// </summary>
+        public void getUsers()
+        {
             dt = new DataSet();
             try
             {
-                string query = "select u.id, u.email from users u, roles r, user_roles ur "+
+                string query = "select u.id, u.email from users u, roles r, user_roles ur " +
                     "WHERE u.id = ur.user_id and r.id= ur.role_id and r.user_type = 'developer'";
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 ada = new MySqlDataAdapter(query, con);
@@ -71,6 +89,7 @@ namespace Assignment2
 
         private void btnUploadImage_Click(object sender, EventArgs e)
         {
+            //pop-up dilaogue box for image selection
             OpenFileDialog op = new OpenFileDialog();
             op.Filter = "Choose Image(*.jpg; *.png)|*.jpg; *.png";
             if (op.ShowDialog() == DialogResult.OK) {
@@ -123,43 +142,52 @@ namespace Assignment2
                 lblEditor.Text = "•Please write a error syntax ";
             }
             else {
-                string pNmae = txtpname.Text;
-                string className = txtclass.Text;
-                string mName = txtmethod.Text;
-                string lineNo = textlineno.Text;
-                string author = txtauthor.Text;
-                string assignTo = comboBoxAssignee.Text;
-                string summary = textsummary.Text;
-                string severity = comboBoxSeverity.Text;
-                string editorB = editor.Text;
-                string lnk = txtCodeLink.Text;
-
-                MemoryStream ms = new MemoryStream();
-                pictureBoxImage.Image.Save(ms, pictureBoxImage.Image.RawFormat);
-                byte[] img = ms.ToArray();
-                try
-                {
-                    string myInsertQuery = "INSERT INTO bugs (project_name, class, method, line_no, code_author, severity, assigned_to," +
-                        "summary, syntax, language, image, assigned_by, link, status) " +
-                        "Values('" + pNmae + "','" + className + "','" + mName + "', '" + lineNo + "','" + author + "','" + severity + "', " +
-                        "'" + assignTo + "','" + summary + "','" + editorB + "','" + clickedtext + "', '" + img + "','" + LoginForm.user + "','" + lnk + "', 'Un-Fixed')";
-                    myCommand = new MySqlCommand(myInsertQuery);
-                    myCommand.Connection = con;
-                    con.Open();
-                    if (myCommand.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("Inserted sucessfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                myCommand.Connection.Close();
+                addBug();
             }
         }
 
+        /// <summary>
+        /// adding bug details 
+        /// </summary>
+        public void addBug()
+        {
+             pNmae = txtpname.Text;
+             className = txtclass.Text;
+             mName = txtmethod.Text;
+             lineNo = textlineno.Text;
+             author = txtauthor.Text;
+             assignTo = comboBoxAssignee.Text;
+             summary = textsummary.Text;
+             severity = comboBoxSeverity.Text;
+             editorB = editor.Text;
+             lnk = txtCodeLink.Text;
+
+            //converting image into byte array
+            MemoryStream ms = new MemoryStream();
+            pictureBoxImage.Image.Save(ms, pictureBoxImage.Image.RawFormat);
+            byte[] img = ms.ToArray();
+            try
+            {
+                string myInsertQuery = "INSERT INTO bugs (project_name, class, method, line_no, code_author, severity, assigned_to," +
+                    "summary, syntax, language, image, assigned_by, date_added, link, status) " +
+                    "VALUES('" + pNmae + "','" + className + "','" + mName + "','" + lineNo + "','" + author + "','" + severity + "'," +
+                    "'" + assignTo + "','" + summary + "','" + editorB + "','" + clickedtext + "','" + img + "','" + LoginForm.user + "','" + DateTime.Now + "','" + lnk + "', 'Un-Fixed')";
+                myCommand = new MySqlCommand(myInsertQuery);
+                myCommand.Connection = con;
+                con.Open();
+                if (myCommand.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Inserted sucessfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error in connection!", "info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            myCommand.Connection.Close();
+        }
+    
         private void Language_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             clickedtext = e.ClickedItem.Text;

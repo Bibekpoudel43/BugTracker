@@ -19,7 +19,7 @@ namespace Assignment2
 
         private void fastColoredTextBoxCode_Load(object sender, EventArgs e)
         { 
-
+            //syntax highlight based on the selected language
             if(ViewBug.Language == "C#")
             {
                 fastColoredTextBoxCode.Language = FastColoredTextBoxNS.Language.CSharp;

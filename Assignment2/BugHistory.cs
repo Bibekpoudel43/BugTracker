@@ -13,6 +13,7 @@ namespace Assignment2
 {
     public partial class BugHistory : Form
     {
+        //set connection to mysql database
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlDataAdapter ada;
         DataSet dt;
@@ -25,6 +26,8 @@ namespace Assignment2
         {
             try
             {
+                //if search box contains a text then search according to specified bug 
+                //if not then view all bugs
                 if (!String.IsNullOrEmpty(Dashboard.searchItem))
                 {
                     string query = "select * from bugs where summary like '%"+Dashboard.searchItem+ "%' or project_name like '%" + Dashboard.searchItem + "%' ";
@@ -32,9 +35,9 @@ namespace Assignment2
                     con.Open();
                     dt = new DataSet();
                     ada.Fill(dt, "bugs");
+                    //showing data from bugs table into grid table
                     dataGridViewBugs.DataSource = dt.Tables["bugs"]; ;
                     dataGridViewBugs.Columns["image"].Visible = false;
-                    dataGridViewBugs.Columns["date_added"].Visible = false;
                     con.Close();
                 }
                 else {
@@ -45,11 +48,10 @@ namespace Assignment2
                     ada.Fill(dt, "bugs");
                     dataGridViewBugs.DataSource = dt.Tables["bugs"]; ;
                     dataGridViewBugs.Columns["image"].Visible = false;
-                    dataGridViewBugs.Columns["date_added"].Visible = false;
                     con.Close();
                      }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }

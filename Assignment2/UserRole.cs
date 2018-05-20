@@ -13,12 +13,13 @@ namespace Assignment2
 {
     public partial class UserRole : Form
     {
+        //set connection to mysql database
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlDataAdapter ada;
         DataSet dt;
         DataTable d;
         MySqlCommand myCommand;
-        int userId, roleID = -1;
+        private int userId, roleID = -1;
         public UserRole()
         {
             InitializeComponent();
@@ -41,11 +42,14 @@ namespace Assignment2
             {
                 getUser();
                 getRole();
+                //calling method
                 addUserRole();
             }
         }
 
-        //fecth data from database and load it into a combo box
+        /// <summary>
+        /// fecth data from database and load it into a combo box
+        /// </summary>
         public void selectRole()
         {
             dt = new DataSet();
@@ -65,8 +69,10 @@ namespace Assignment2
             catch (Exception)
             {
             }
-       }
-        //fecth data from database and load it into a combo box
+        }
+        /// <summary>
+        /// fecth data from database and load it into a combo box
+        /// </summary>
         public void selectUsers()
         {
             dt = new DataSet();
@@ -87,8 +93,11 @@ namespace Assignment2
             {
             }
         }
-        //add user's their role
-        public void addUserRole() {
+        /// <summary>
+        /// inserting data based on the selected value
+        /// </summary>
+        public void addUserRole()
+        {
             try
             {
                 string myInsertQuery = "INSERT INTO user_roles(user_id, role_id) values("+userId+","+roleID+")";
@@ -106,8 +115,11 @@ namespace Assignment2
 
             myCommand.Connection.Close();
         }
-        //get the specific user
-        public void getUser() {
+        /// <summary>
+        /// get the specific user
+        /// </summary>
+        public void getUser()
+        {
             d = new DataTable();
             try
             {
@@ -129,7 +141,9 @@ namespace Assignment2
             }
         }
 
-        //get the specific role for user
+        /// <summary>
+        /// get the specific role for user
+        /// </summary>
         public void getRole()
         {
 
@@ -154,7 +168,7 @@ namespace Assignment2
             {
                 //MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
+         }
     }
  }
 

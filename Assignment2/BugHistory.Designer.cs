@@ -40,13 +40,13 @@
             this.dataGridViewBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBugs.Location = new System.Drawing.Point(1, 42);
             this.dataGridViewBugs.Name = "dataGridViewBugs";
-            this.dataGridViewBugs.Size = new System.Drawing.Size(1028, 430);
+            this.dataGridViewBugs.Size = new System.Drawing.Size(1052, 430);
             this.dataGridViewBugs.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Tomato;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label1.Location = new System.Drawing.Point(12, 9);
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 484);
+            this.ClientSize = new System.Drawing.Size(1100, 484);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewBugs);
             this.Name = "BugHistory";

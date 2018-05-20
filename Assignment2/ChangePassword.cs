@@ -15,10 +15,11 @@ namespace Assignment2
     public partial class ChangePassword : Form
     {
         public static string user, email, userRole;
-        string pass;
         public static int uId;
+        //set connection to mysql database
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlCommand myCommand;
+        //get the password of logged in user
         string pas = LoginForm.userPassword;
         public ChangePassword()
         {
@@ -42,7 +43,19 @@ namespace Assignment2
                 MessageBox.Show("Password doesn't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtOldPassword.Focus();
             }
-            else {
+            else
+            {
+                //calling method 
+                updatePassword();
+            }
+        }
+            
+        /// <summary>
+        /// update the password of admin user
+        /// </summary>
+        public void updatePassword()
+        {
+ 
                 try
                 {
                     string myQuery = "UPDATE users set password='" +txtNewPassword.Text+ "' where id=" + LoginForm.uId;
@@ -58,8 +71,8 @@ namespace Assignment2
                     MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 myCommand.Connection.Close();
-            }
         }
-    }
-    }
+     }
+ }
+    
 

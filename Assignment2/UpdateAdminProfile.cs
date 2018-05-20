@@ -12,6 +12,7 @@ namespace Assignment2
 {
     public partial class UpdateAdminProfile : Form
     {
+        //set connection to mysql database
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrackingsys; password=; SslMode=none;");
         MySqlDataAdapter ada;
         DataTable dt;
@@ -55,12 +56,16 @@ namespace Assignment2
         
             else
             {
+                //calling method
                 updateProfile();
             }
         }
 
-        //load admin profile on the textbox
-        public void viewProfile() {
+        /// <summary>
+        /// load admin profile on the textbox
+        /// </summary>
+        public void viewProfile()
+        {
             try
             {
                 string query = "select * from users where id =" + labelID.Text;
@@ -72,7 +77,7 @@ namespace Assignment2
 
                 if (dt.Rows.Count == 1)
                 {
-                    //Read the data and store them in the list
+                    //fetch the data and store them in the list
                     while (uRes.Read())
                     {
                         txtfname.Text = uRes.GetString(1);
@@ -87,6 +92,9 @@ namespace Assignment2
             }
         }
 
+        /// <summary>
+        /// admin profile update
+        /// </summary>
         public void updateProfile()
         {
             try

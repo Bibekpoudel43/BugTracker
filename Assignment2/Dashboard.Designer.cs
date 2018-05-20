@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1202, 49);
+            this.panel1.Size = new System.Drawing.Size(1066, 49);
             this.panel1.TabIndex = 0;
             // 
             // linkLabelChangePassword
@@ -73,7 +73,7 @@
             this.linkLabelChangePassword.ForeColor = System.Drawing.Color.White;
             this.linkLabelChangePassword.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabelChangePassword.LinkColor = System.Drawing.Color.White;
-            this.linkLabelChangePassword.Location = new System.Drawing.Point(1036, 13);
+            this.linkLabelChangePassword.Location = new System.Drawing.Point(924, 13);
             this.linkLabelChangePassword.Name = "linkLabelChangePassword";
             this.linkLabelChangePassword.Size = new System.Drawing.Size(54, 20);
             this.linkLabelChangePassword.TabIndex = 9;
@@ -107,12 +107,12 @@
             this.linkLabelViewBug.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelViewBug.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabelViewBug.LinkColor = System.Drawing.Color.White;
-            this.linkLabelViewBug.Location = new System.Drawing.Point(185, 13);
+            this.linkLabelViewBug.Location = new System.Drawing.Point(171, 13);
             this.linkLabelViewBug.Name = "linkLabelViewBug";
-            this.linkLabelViewBug.Size = new System.Drawing.Size(79, 20);
+            this.linkLabelViewBug.Size = new System.Drawing.Size(106, 20);
             this.linkLabelViewBug.TabIndex = 7;
             this.linkLabelViewBug.TabStop = true;
-            this.linkLabelViewBug.Text = "View Bug";
+            this.linkLabelViewBug.Text = "Assigned Bug";
             this.linkLabelViewBug.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.clickViewBugs);
             // 
             // linkReport
@@ -137,7 +137,7 @@
             this.labelWelcome.AutoSize = true;
             this.labelWelcome.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWelcome.ForeColor = System.Drawing.Color.White;
-            this.labelWelcome.Location = new System.Drawing.Point(691, 13);
+            this.labelWelcome.Location = new System.Drawing.Point(660, 13);
             this.labelWelcome.Name = "labelWelcome";
             this.labelWelcome.Size = new System.Drawing.Size(0, 20);
             this.labelWelcome.TabIndex = 5;
@@ -150,7 +150,7 @@
             this.lbllogout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbllogout.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lbllogout.LinkColor = System.Drawing.Color.White;
-            this.lbllogout.Location = new System.Drawing.Point(1123, 13);
+            this.lbllogout.Location = new System.Drawing.Point(996, 13);
             this.lbllogout.Name = "lbllogout";
             this.lbllogout.Size = new System.Drawing.Size(67, 20);
             this.lbllogout.TabIndex = 4;
@@ -161,7 +161,7 @@
             // btnsearch
             // 
             this.btnsearch.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsearch.Location = new System.Drawing.Point(541, 15);
+            this.btnsearch.Location = new System.Drawing.Point(540, 10);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
             this.btnsearch.TabIndex = 3;
@@ -171,7 +171,7 @@
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(384, 16);
+            this.txtsearch.Location = new System.Drawing.Point(398, 12);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(136, 20);
             this.txtsearch.TabIndex = 0;
@@ -199,7 +199,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1202, 628);
+            this.ClientSize = new System.Drawing.Size(1066, 628);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;

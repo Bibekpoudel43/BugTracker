@@ -379,19 +379,21 @@
         '\"',
         '\'',
         '\''};
-            this.editor.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            this.editor.AutoScrollMinSize = new System.Drawing.Size(195, 14);
             this.editor.BackBrush = null;
             this.editor.CharHeight = 14;
             this.editor.CharWidth = 8;
             this.editor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.editor.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.editor.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.editor.IsReplaceMode = false;
-            this.editor.Location = new System.Drawing.Point(545, 159);
+            this.editor.Location = new System.Drawing.Point(527, 159);
             this.editor.Name = "editor";
             this.editor.Paddings = new System.Windows.Forms.Padding(0);
             this.editor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.editor.Size = new System.Drawing.Size(376, 214);
+            this.editor.Size = new System.Drawing.Size(394, 265);
             this.editor.TabIndex = 56;
+            this.editor.Text = "Insert Your Code Here";
             this.editor.Zoom = 100;
             this.editor.Load += new System.EventHandler(this.code_default);
             // 
@@ -454,7 +456,7 @@
             // btnUploadImage
             // 
             this.btnUploadImage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadImage.Location = new System.Drawing.Point(682, 403);
+            this.btnUploadImage.Location = new System.Drawing.Point(654, 468);
             this.btnUploadImage.Name = "btnUploadImage";
             this.btnUploadImage.Size = new System.Drawing.Size(125, 23);
             this.btnUploadImage.TabIndex = 58;
@@ -464,7 +466,7 @@
             // 
             // pictureBoxImage
             // 
-            this.pictureBoxImage.Location = new System.Drawing.Point(603, 432);
+            this.pictureBoxImage.Location = new System.Drawing.Point(575, 497);
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(292, 142);
             this.pictureBoxImage.TabIndex = 59;
@@ -475,7 +477,7 @@
             this.lblEditor.AutoSize = true;
             this.lblEditor.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditor.ForeColor = System.Drawing.Color.Tomato;
-            this.lblEditor.Location = new System.Drawing.Point(583, 381);
+            this.lblEditor.Location = new System.Drawing.Point(589, 442);
             this.lblEditor.Name = "lblEditor";
             this.lblEditor.Size = new System.Drawing.Size(0, 16);
             this.lblEditor.TabIndex = 60;
@@ -526,7 +528,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(942, 644);
+            this.ClientSize = new System.Drawing.Size(942, 737);
             this.Controls.Add(this.lblCodeLink);
             this.Controls.Add(this.txtCodeLink);
             this.Controls.Add(this.label10);
