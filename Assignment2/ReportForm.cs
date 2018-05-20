@@ -110,6 +110,10 @@ namespace Assignment2
             {
                 lblsummary.Text = " •Please enter a summary";
             }
+            else if (txtCodeLink.Text == "")
+            {
+                lblCodeLink.Text = " •Please provide a link to your code";
+            }
             else if (comboBoxSeverity.Text == "")
             {
                 lblseverity.Text = " •Please choose a severity level ";
@@ -128,6 +132,7 @@ namespace Assignment2
                 string summary = textsummary.Text;
                 string severity = comboBoxSeverity.Text;
                 string editorB = editor.Text;
+                string lnk = txtCodeLink.Text;
 
                 MemoryStream ms = new MemoryStream();
                 pictureBoxImage.Image.Save(ms, pictureBoxImage.Image.RawFormat);
@@ -135,9 +140,9 @@ namespace Assignment2
                 try
                 {
                     string myInsertQuery = "INSERT INTO bugs (project_name, class, method, line_no, code_author, severity, assigned_to," +
-                        "summary, syntax, language, image, assigned_by, status) " +
+                        "summary, syntax, language, image, assigned_by, link, status) " +
                         "Values('" + pNmae + "','" + className + "','" + mName + "', '" + lineNo + "','" + author + "','" + severity + "', " +
-                        "'" + assignTo + "','" + summary + "','" + editorB + "','" + clickedtext + "', '" + img + "','" + LoginForm.user + "', 'Un-Fixed')";
+                        "'" + assignTo + "','" + summary + "','" + editorB + "','" + clickedtext + "', '" + img + "','" + LoginForm.user + "','" + lnk + "', 'Un-Fixed')";
                     myCommand = new MySqlCommand(myInsertQuery);
                     myCommand.Connection = con;
                     con.Open();

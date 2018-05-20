@@ -67,6 +67,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnViewCode = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.CodeLinkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBug)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,7 +124,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(803, 562);
+            this.btnEdit.Location = new System.Drawing.Point(779, 638);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(124, 33);
             this.btnEdit.TabIndex = 9;
@@ -147,7 +150,7 @@
             this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Tomato;
             this.label15.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label15.Location = new System.Drawing.Point(666, 518);
+            this.label15.Location = new System.Drawing.Point(665, 471);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 21);
             this.label15.TabIndex = 48;
@@ -219,7 +222,7 @@
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Tomato;
             this.label13.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label13.Location = new System.Drawing.Point(666, 467);
+            this.label13.Location = new System.Drawing.Point(665, 570);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 21);
             this.label13.TabIndex = 50;
@@ -342,7 +345,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Tomato;
-            this.label20.Location = new System.Drawing.Point(832, 471);
+            this.label20.Location = new System.Drawing.Point(831, 574);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(12, 17);
             this.label20.TabIndex = 63;
@@ -353,7 +356,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Tomato;
-            this.label21.Location = new System.Drawing.Point(832, 522);
+            this.label21.Location = new System.Drawing.Point(831, 475);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(12, 17);
             this.label21.TabIndex = 62;
@@ -461,7 +464,7 @@
             this.lblsummary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsummary.ForeColor = System.Drawing.Color.Tomato;
             this.lblsummary.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblsummary.Location = new System.Drawing.Point(884, 522);
+            this.lblsummary.Location = new System.Drawing.Point(883, 475);
             this.lblsummary.Name = "lblsummary";
             this.lblsummary.Size = new System.Drawing.Size(20, 21);
             this.lblsummary.TabIndex = 72;
@@ -473,7 +476,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Un-Fixed",
             "Fixed"});
-            this.comboBox1.Location = new System.Drawing.Point(888, 471);
+            this.comboBox1.Location = new System.Drawing.Point(887, 574);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 21);
             this.comboBox1.TabIndex = 73;
@@ -523,7 +526,7 @@
             this.btnViewCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewCode.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewCode.ForeColor = System.Drawing.Color.White;
-            this.btnViewCode.Location = new System.Drawing.Point(549, 366);
+            this.btnViewCode.Location = new System.Drawing.Point(524, 471);
             this.btnViewCode.Name = "btnViewCode";
             this.btnViewCode.Size = new System.Drawing.Size(94, 24);
             this.btnViewCode.TabIndex = 78;
@@ -531,12 +534,49 @@
             this.btnViewCode.UseVisualStyleBackColor = false;
             this.btnViewCode.Click += new System.EventHandler(this.clickViewCode);
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Tomato;
+            this.label22.Location = new System.Drawing.Point(831, 523);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(12, 17);
+            this.label22.TabIndex = 80;
+            this.label22.Text = ":";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Tomato;
+            this.label25.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label25.Location = new System.Drawing.Point(665, 519);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(86, 21);
+            this.label25.TabIndex = 81;
+            this.label25.Text = "Code Link";
+            // 
+            // CodeLinkLabel
+            // 
+            this.CodeLinkLabel.AutoSize = true;
+            this.CodeLinkLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CodeLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.CodeLinkLabel.Location = new System.Drawing.Point(884, 525);
+            this.CodeLinkLabel.Name = "CodeLinkLabel";
+            this.CodeLinkLabel.Size = new System.Drawing.Size(0, 21);
+            this.CodeLinkLabel.TabIndex = 82;
+            this.CodeLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CodeLinkLabel_LinkClicked);
+            // 
             // ViewBug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1121, 620);
+            this.ClientSize = new System.Drawing.Size(1121, 749);
+            this.Controls.Add(this.CodeLinkLabel);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.btnViewCode);
             this.Controls.Add(this.lblAddedDAte);
             this.Controls.Add(this.label23);
@@ -626,5 +666,8 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnViewCode;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.LinkLabel CodeLinkLabel;
     }
 }

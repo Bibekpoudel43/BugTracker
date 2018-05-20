@@ -68,6 +68,9 @@
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.lblEditor = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblCodeLink = new System.Windows.Forms.Label();
+            this.txtCodeLink = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.editor)).BeginInit();
             this.toolStripLanguage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
@@ -488,12 +491,45 @@
             this.label3.TabIndex = 61;
             this.label3.Text = "From-To";
             // 
+            // lblCodeLink
+            // 
+            this.lblCodeLink.AutoSize = true;
+            this.lblCodeLink.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeLink.ForeColor = System.Drawing.Color.Tomato;
+            this.lblCodeLink.Location = new System.Drawing.Point(161, 497);
+            this.lblCodeLink.Name = "lblCodeLink";
+            this.lblCodeLink.Size = new System.Drawing.Size(0, 16);
+            this.lblCodeLink.TabIndex = 64;
+            // 
+            // txtCodeLink
+            // 
+            this.txtCodeLink.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtCodeLink.Location = new System.Drawing.Point(148, 471);
+            this.txtCodeLink.Name = "txtCodeLink";
+            this.txtCodeLink.Size = new System.Drawing.Size(219, 23);
+            this.txtCodeLink.TabIndex = 63;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Tomato;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label10.Location = new System.Drawing.Point(17, 468);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 21);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "Code Link";
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(942, 644);
+            this.Controls.Add(this.lblCodeLink);
+            this.Controls.Add(this.txtCodeLink);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblEditor);
             this.Controls.Add(this.pictureBoxImage);
@@ -580,5 +616,8 @@
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Label lblEditor;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCodeLink;
+        private System.Windows.Forms.TextBox txtCodeLink;
+        private System.Windows.Forms.Label label10;
     }
 }
